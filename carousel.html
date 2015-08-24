@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>幻灯片特效</title>
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="carousel" data-setting='{
+      "width": 970,
+      "height": 410,
+      "autoplay": true,
+      "speed": 1000,
+      "delay": 3000
+    }'>
+      <ul class="carousel-main">
+        <li class="current"><img src="img/01.jpg"></li>
+        <li><img src="img/02.jpg"></li>
+        <li><img src="img/03.jpg"></li>
+        <li><img src="img/02.jpg"></li>
+        <li><img src="img/03.jpg"></li>
+      </ul>
+      <div class="carousel-menu">
+        <a href="javascript:;" class="active"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+      </div>
+      <a href="javascript:;" class="play-btn play-btn-prev">&lt;</a>
+      <a href="javascript:;" class="play-btn play-btn-next">&gt;</a>
+    </div>
+
+    <div class="carousel" data-setting='{
+      "width": 770,
+      "height": 310,
+      "autoplay": false,
+      "speed": 1000,
+      "delay": 6000
+    }'>
+      <ul class="carousel-main">
+        <li class="current"><img src="img/01.jpg"></li>
+        <li><img src="img/02.jpg"></li>
+        <li><img src="img/03.jpg"></li>
+        <li><img src="img/02.jpg"></li>
+        <li><img src="img/03.jpg"></li>
+      </ul>
+      <div class="carousel-menu">
+        <a href="javascript:;" class="active"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+      </div>
+      <a href="javascript:;" class="play-btn play-btn-prev">&lt;</a>
+      <a href="javascript:;" class="play-btn play-btn-next">&gt;</a>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <script>
+      $(function(){
+        Carousel.init($('.carousel'));
+      });
+    </script>
+  </body>
+</html>
