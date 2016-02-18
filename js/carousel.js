@@ -10,9 +10,15 @@
     this.current_index = 0;                                 //当前显示的图片的下标
     this.next_index = 0;                                    //下一张要显示图片的下标
     this.prev_index = 0;                                    //上一张要显示图片的下标
+
+    this.$lis.each(function(index, ele){                    //最先显示有class='current'的li
+      if($(this).hasClass('current')){
+        self.current_index = index;
+      }
+    });
     this.defaults = {                                       //默认参数配置
-       'width': 800,                                        //宽度
-       'height': 350,                                       //高度
+       'width': '100%',                                        //宽度
+       'height': '100%',                                       //高度
        'autoplay': true,                                    //自动播放
        'speed': 800,                                        //动画时间
        'delay': 5000                                        //间隔时间
@@ -37,6 +43,16 @@
        $(this).data('data-index',index).on('click',function(){
          self.moveTo($(this).data('data-index'));
        });
+    });
+
+    //通过键盘方向键控制播放 ←(keycode=37) ↑(keycode=38) →(keycode=39) ↓(keycode=40)
+    $(document).on('keydown', function(e){
+      if(e.keyCode == 37 || e.keyCode == 38){
+        self.movePrev();
+      }
+      if(e.keyCode == 39 || e.keyCode == 40){
+        self.moveNext();
+      }
     });
 
     //是否自动播放
